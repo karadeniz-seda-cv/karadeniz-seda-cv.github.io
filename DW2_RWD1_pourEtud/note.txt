@@ -1,0 +1,100 @@
+em- taille de la police 
+multiplier en cascade - si le parent est en em calcul en cascade jusquau parent en px exmple
+exm: html = 10px body = 2em div = 2em (calculer a )= 10px*2em=20px*2em=40
+
+% - taille de lla fentre
+% relative a la largeur du parent exmple div widht 10% = 10% du parent
+
+rem-pareil que em mais relatif racine (html)
+rem calcul juste la racine exmple si le div = 2rem et html = 10px alors calcul 10*20pour avoirla taille en px du div
+vw(largeur)-vh(hauteur)- relative a la taille de la fenetre exmple div width 10vw = 10% de la taille du parent
+
+!!utiliser max width et min width !! car le bloc ne doit pas se retricire trop 
+minwidth utiliser em 
+
+pour melanger les unité (calcul) utiliser calc() exmp: width: calc(100%-20px)
+
+modele de boite strandart : contenu + padding + bordur+margin
+
+box sizing border box
+taille entiere est le width 
+la taille du contenu grace a la soustraction
+(en gros mettre le contenu dans la boite (on choisi la taille de la boite)
+*{}-- ne pas utiliser ca car si on utilise ce code css dans un cms on risque de casser des modules 
+possibilité de mettre html *{} (tout les enfnts de la page)
+
+!!arriver a BFC transparent wd
+
+
+
+
+débordement de text dans une boite 
+1. mettre la boite en overflox : hidden 
+et mettre text-overflow : ellipsis
+mais si ont fait ca le probleme cest que le mot est couper alors il faut mettre au surrvol de la boite il soit visible 
+p:hover { overflow : visible
+
+2. synder .. mettre dans la boite hyphens : auto
+pour que des tiret soit ajouter automatiquement quand le mots est long pour le fr passer en dessus automatiquement
+pas compatible avec les anciens navigateur
+-- can i use
+
+3. utiliser word wrap : break-word 
+qui ft la mm chose que 2. mais qui ne met pas de tiret (ce qui est mieux pour par exmple les url!!
+
+utiliser les 2 maniere 
+dabord word-wrap : break-word
+puis hypens : auto 
+les navigateur plus recent utiliseront la derniere ligne et les anciens lautre
+
+
+word-wrap === overflow-wrap utiliser ca mtn
+
+si balise pre overflow-wrap ne fonctionnera pas 
+pour que sa fonctionne il faut dabord mettre white-space : pre-wrap puis overflow-wrap : break-word
+
+pour les images 
+1.utiliser object position pour position limage (la partie qui sera visible quand elle ssera tronquer
+2. utiliser max-width 100%
+pas oublier le height auto
+attention si diplay flex limage sera etirer car align items par defaut = stretch donc mettre sur flex start
+utiliser object fit cover qui est comme background cover
+
+
+hs:
+background size : cover permet dagrandir la photo jusqu'a ce quelle soit assez grande pour quelle prenne tte la taille de la page mais sa vx dire quelle sera tronquer
+background size contain laisse un espace 
+
+
+media queries
+pour les visuelle telephone
+mettre 
+@media (max-width : 640px){p{width auto background pink exemple
+
+la taille du viewport est la taille du vavigateur alors que la taille du device est la taille de lecran
+
+
+
+
+width 100% probleme peu depasser son contenu 
+le width 100% ne px pas se fr sur une balise inline
+
+
+quand on vx fr du responsive et quon vx annuler (voir dessous)
+pour annuler un position (pour que le positionnement revienne dans le flux utiliser position: static 
+pour annuler float = float none
+si on a mis une largeur par exmple width 300% et que dans la media queries on vx que sa revienne a la normal il faut mettre width auto 
+
+sinon la valeur inherit px etre interresante :  inherit va chercher la valeur de son parent 
+
+
+graceful-degradetion (degradation gracieuse) de commencer par un css dune grande page puis ladapter pour un plus petit ecran 
+progressive - enhacement le ft de fr le css pour les petit ecran puis ladapter pr les grand
+
+
+meta nema = "viewport" content="width=device-width" ou content = initial-scale=1
+
+plutot mettre 
+content="width=device-width, initial-scale =1"
+ecrire ce quil ya au dessu dans lhtml pour les ancien navigateur 
+et dans le css ->

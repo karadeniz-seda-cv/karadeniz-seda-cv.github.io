@@ -1,0 +1,65 @@
+/* ----------------------------- */
+/*   Flexible Layout             */
+/* ----------------------------- */
+
+/*
+1- Les liens menants vers un document .doc devront être précédés de la chaîne "(doc) ". Idem pour .xls et .pdf
+2- trouver un moyen de regrouper les doc, les xls et les pdf ensemble (d'abord les .doc, puis les .xls et enfin les .pdf)
+3- afficher un trait de séparation au-dessus des .pdf 
+
+*/
+
+body {margin:0; padding:10px 40px; background:#F1EFE2;
+	font-size: 1.6em;
+	font-family: georgia, "trebuchet ms", arial, serif;}
+h1 {margin-top: 20px; margin-bottom: 40px;
+	color: #345; text-shadow: 1px 1px 1px #fff;}
+
+a {
+	display: block;
+	margin-top: 6px;
+	color: #000;
+	text-decoration: none;
+	background: transparent;
+}
+div {
+	width: 500px;
+}
+
+div{
+	display: flex;
+	flex-direction: column;
+  }
+  
+  a[href$='.doc']{
+	order: -1;
+  }
+  
+  a[href$='.pdf']{
+	transform: translateY(1.5em);
+	order: 1;	 
+  }
+ /*  a[href$='.xls']{
+	  border-bottom:2px dotted #000 ;
+  } */
+
+
+  *:before{
+	color: black;
+	text-transform: lowercase;
+	font-size: 0.65em;
+	margin-right: 1em;
+  }
+  
+  a[href$='.pdf']:before{
+	content: "PDF";
+  }
+  a[href$='.doc']:before{
+	content: "DOC";
+  }
+  a[href$='.xls']:before{
+	content: "XLS";
+  }
+  
+  
+  

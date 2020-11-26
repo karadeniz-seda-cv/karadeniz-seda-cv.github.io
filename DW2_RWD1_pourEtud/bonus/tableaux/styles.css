@@ -1,0 +1,64 @@
+
+
+/* ----------------------------- */
+/*   Objectif Tableau           */
+/* ----------------------------- */
+/*
+
+L'objectif est de réorganiser un tableau de données sur petits écrans
+
+
+1- lorsque la taille d'écran est inférieure à 640px, la colonne "couleur" doit disparaître
+
+2- lorsque la taille d'écran est inférieure à 480px :
+	- la première ligne d'entêtes doit disparaître
+	- chaque rangée doit s'afficher l'une sous l'autre
+	- chaque cellule de donnée doit s'afficher l'une à côté de l'autre
+
+*/
+
+body {
+  	padding: 20px;
+  	background: white;
+  	color: black;
+  	font: 120% Georgia;
+}
+
+h1 {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	color: #789;
+	text-shadow: 1px 1px #fff;
+}
+
+table {
+  width: 90%;
+  font-size: 0.9em;
+}
+table caption {
+  color: #555;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+th {
+  text-align: left;
+}
+td:last-child, th:last-child {
+  text-align:right;
+}
+td, th {
+  padding: 4px 10px;
+}
+tr:nth-child(odd), tr:nth-child(odd) {
+  background: #eee;
+}
+tr:nth-child(even) {
+  background: #ddd;
+}
+tr:first-child, tr:first-child {
+  background: #dcdcba;
+  color:white;
+}
+table td:empty {
+  background:white;
+}

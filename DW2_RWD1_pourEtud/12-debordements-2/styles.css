@@ -1,0 +1,47 @@
+/* ----------------------------- */
+/*   Objectif Débordements       */
+/* ----------------------------- */
+
+/*
+
+Maîtriser les débordements au sein des éléments lorsque la fenêtre se réduit :
+
+1- corriger les débordements de mots et d'images
+
+*/
+
+body {
+	margin: 0;
+	padding: 2em;
+	background: #F1EFE2;
+	font: 1.6em/1.3 "Century Gothic", helvetica, arial, sans-serif;
+}
+p {
+	overflow-wrap: break-word;
+	hyphens: auto;
+	padding: 5px;
+	border: 2px solid #fff;
+	border-radius: 6px;
+	color: #fff;
+}
+p {
+	background: orange;
+}
+a {
+	overflow-wrap: break-word;
+	hyphens: none; /* car la a est ds le p et quil a donc en auto */
+	color: #800000;
+}
+img{
+	max-width: 100%;
+	height: auto;
+}
+/* div{
+	overflow: hidden;
+}deuxieme maniere */
+/* img{
+	max-width: 100%;
+	height: 300px;
+	object-fit: cover;
+	object-position: right;
+} 3eme maniere*/

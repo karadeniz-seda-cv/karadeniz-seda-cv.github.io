@@ -1,0 +1,22 @@
+/* ----------------------------- */
+/*   Viewport                    */
+/* ----------------------------- */
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #F1EFE2;
+	font-size: 160%;
+	font-family: helvetica, arial, sans-serif;
+}
+#main p {
+	padding: 5px;
+	margin: 0;
+	background: #abc;
+}
+#main p + p {
+	background: #fab;
+}
+#main p + p + p {
+	background: #efa;
+}

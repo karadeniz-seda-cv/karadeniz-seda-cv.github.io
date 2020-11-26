@@ -1,0 +1,45 @@
+/* ----------------------------- */
+/*   Objectif Débordements       */
+/* ----------------------------- */
+
+/*
+
+Maîtriser les débordements au sein des éléments lorsque la fenêtre se réduit :
+
+1- les liens (et mots longs) doivent être coupés pour ne pas déborder de leur parent. Tester sur IE8, Chrome et Firefox
+2- Corriger le problème d'affichage dans la cellule de tableau : le lien long "pousse" le conteneur
+
+*/
+
+body {
+	margin: 0;
+	padding: 2em;
+	background: #F1EFE2;
+	font: 1.6em/1.3 "Century Gothic", helvetica, arial, sans-serif;
+}
+p,
+pre,
+td {
+	padding: 5px;
+	border: 2px solid #fff;
+	border-radius: 6px;
+	color: #fff;
+	overflow-wrap: break-word;
+	hyphens: auto;
+}
+
+p {
+	background: orange;
+}
+pre {
+	background: hotpink;
+	white-space: pre-wrap;
+	
+}
+td {
+	background: olivedrab;
+}
+a {
+	color: #800000;
+	overflow-wrap: break-word;
+}
